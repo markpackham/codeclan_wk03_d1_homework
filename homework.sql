@@ -110,3 +110,59 @@ UPDATE 1
 ## Extension
 
 1.  Research how to delete multiple entries from your table in a single command.
+TRUNCATE TABLE people;
+SELECT * FROM people;
+ id | name 
+----+------
+(0 rows)
+
+
+DELETE FROM movies WHERE year < 2018;
+SELECT * FROM movies;
+DELETE 18
+ id |     title     | year | show_time 
+----+---------------+------+-----------
+ 19 | Black Panther | 2018 | 21:00
+(1 row)
+
+
+
+DELETE FROM movies WHERE year IN (2008,2010,2011,2012,2013);
+SELECT * FROM movies;
+
+DELETE 8
+ id |                title                | year | show_time 
+----+-------------------------------------+------+-----------
+  9 | Batman Begins                       | 2005 | 13:40
+ 10 | Captain America: The Winter Soldier | 2014 | 18:25
+ 11 | Guardians of the Galaxy             | 2014 | 13:10
+ 12 | Avengers: Age of Ultron             | 2015 | 20:20
+ 13 | Ant-Man                             | 2015 | 13:00
+ 14 | Captain America: Civil War          | 2016 | 12:35
+ 15 | Doctor Strange                      | 2016 | 22:00
+ 16 | Guardians of the Galaxy 2           | 2017 | 14:05
+ 17 | Spider-Man: Homecoming              | 2017 | 23:00
+ 18 | Thor: Ragnarok                      | 2017 | 22:10
+ 19 | Black Panther                       | 2018 | 21:00
+(11 rows)
+
+
+
+DELETE FROM movies WHERE year BETWEEN 2008 AND 2017;
+SELECT * FROM movies;
+DELETE 17
+ id |     title     | year | show_time 
+----+---------------+------+-----------
+  9 | Batman Begins | 2005 | 13:40
+ 19 | Black Panther | 2018 | 21:00
+(2 rows)
+
+
+
+DELETE FROM movies WHERE title NOT LIKE 'Thor';
+SELECT * FROM movies;
+DELETE 18
+ id | title | year | show_time 
+----+-------+------+-----------
+  4 | Thor  | 2011 | 15:45
+(1 row)
